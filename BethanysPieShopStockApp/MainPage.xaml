@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:model="clr-namespace:BethanysPieShopStockApp.Model"
+             x:Class="BethanysPieShopStockApp.MainPage">
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <model:Pie Id="1" PieName="Apple Pie" PiePrice="20" x:Key="ApplePie"></model:Pie>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+    
+    <Grid Margin="20, 50, 20, 10"
+          x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Label Text="Pie Name"
+               Grid.Row="0"
+               Grid.Column="0"></Label>
+        <Entry x:Name="PieNameEntry"
+               Text="{Binding PieName, Mode=TwoWay}"
+               Grid.Row="0"
+               Grid.Column="1"></Entry>
+        
+        <Label Text="Pie Price"
+               Grid.Row="1"
+               Grid.Column="0"></Label>
+        <Entry x:Name="PiePriceEntry"
+               Text="{Binding PiePrice, Mode=TwoWay}"
+               Grid.Row="1"
+               Grid.Column="1"></Entry>
+        
+        <Button Text="Add Pie"
+                Clicked="Button_OnClicked"
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"></Button>
+    </Grid>
+</ContentPage>
